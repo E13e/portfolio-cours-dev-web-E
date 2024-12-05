@@ -4,11 +4,24 @@
     box-sizing: border-box;
 }
 
+.nunito-sans-<uniquifier> {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
 body {
     position: relative;
     height: 100vh; 
     width: 100vw; 
     overflow: hidden; 
+    font-family: "Nunito Sans";
+    font-weight: bold;
+    color: whitesmoke;
 }
 
 .background {
@@ -19,10 +32,10 @@ body {
     height: 100%;
     z-index: 1;
     background: conic-gradient(
-        #c7ecf5 90deg,
-        #76cff3 90deg 180deg,
-        #c7ecf5 180deg 270deg,
-        #76cff3 270deg
+        #22a7fa 90deg,
+        #44b8e6 90deg 180deg,
+        #22a7fa 180deg 270deg,
+        #44b8e6 270deg
     );
     background-size: 100px 100px;
     animation: slide 25s linear infinite;
@@ -34,8 +47,8 @@ header {
     left: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(#76cff3, #22a7fa);
-    color: white;
+    background: linear-gradient(#44b8e6 , #22a7fa);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +61,7 @@ header {
 .couche_0 {
     position: absolute;
     z-index: 2; 
-    border-bottom: 100vh solid #c7c7c7;
+    border-bottom: 100vh solid whitesmoke;
     border-right: 25vh solid transparent;
     height: 0;
     width: 100vh;
@@ -75,6 +88,9 @@ header {
     width: 90vh;
     animation: slideRight 0.75s ease-out 0.5s forwards;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes slide {
@@ -106,5 +122,111 @@ header {
     100% {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+menu {
+    position: relative;
+    top: 5%;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;  
+    width: 35%;
+    height: 100vh;
+    z-index: 5;
+    animation: slideRightMenu 0.75s ease-out 0.5s forwards;
+
+}
+
+.bouton-1 {
+    border: none;
+    margin: 10px;
+}
+
+.bouton-2 {
+    border: none;
+    margin: 10px;
+}
+
+.bouton-3 {
+    border: none;
+    margin: 10px;
+}
+
+menu button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    width: 500px;
+    margin: 10%;
+    padding: 15px 20px;
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+    transition: 0.25s ease-out;
+}
+
+menu button:hover {
+    background-color: #ffffff69;
+    scale: 1.2;
+}
+
+
+@keyframes slideRightMenu {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+.couche_0.fullscreen {
+    position: absolute;
+    z-index: 2;
+    background-color: whitesmoke;
+    border-right: 25vh solid transparent;
+    height: 0;
+    width: 90vh; 
+    opacity: 1;
+    display: block;
+    animation: expandMenu 0.60s ease-out forwards;
+}
+
+.couche_1.fullscreen {
+    position: absolute;
+    z-index: 3;
+    background-color: #f14c36;
+    border-right: 25vh solid transparent;
+    height: 0; 
+    width: 90vh; 
+    opacity: 1;
+    display: block;
+    animation: expandMenu 0.80s ease-out 0.1s forwards;
+}
+
+.couche_2.fullscreen {
+    position: absolute;
+    z-index: 4;
+    background-color: #22a7fa;
+    height: 0;
+    width: 90vh;
+    opacity: 1;
+    display: block;
+    animation: expandMenu 1s ease-out 0.2s forwards;
+}
+
+@keyframes expandMenu {
+    100% {
+        width: 100vw;
     }
 }
