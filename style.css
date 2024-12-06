@@ -190,7 +190,7 @@ menu button:hover {
     }
 }
 
-.couche_0.fullscreen {
+.couche_0.active {
     position: absolute;
     z-index: 2;
     background-color: whitesmoke;
@@ -199,10 +199,10 @@ menu button:hover {
     width: 90vh; 
     opacity: 1;
     display: block;
-    animation: expandMenu 0.60s ease-out forwards;
+    animation: expandMenu 0.75s ease-out forwards;
 }
 
-.couche_1.fullscreen {
+.couche_1.active {
     position: absolute;
     z-index: 3;
     background-color: #f14c36;
@@ -211,10 +211,10 @@ menu button:hover {
     width: 90vh; 
     opacity: 1;
     display: block;
-    animation: expandMenu 0.80s ease-out 0.1s forwards;
+    animation: expandMenu 0.75s ease-out forwards;
 }
 
-.couche_2.fullscreen {
+.couche_2.active {
     position: absolute;
     z-index: 4;
     background-color: #22a7fa;
@@ -222,7 +222,7 @@ menu button:hover {
     width: 90vh;
     opacity: 1;
     display: block;
-    animation: expandMenu 1s ease-out 0.2s forwards;
+    animation: expandMenu 0.75s ease-out forwards;
 }
 
 @keyframes expandMenu {
